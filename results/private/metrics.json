@@ -1,0 +1,24 @@
+{
+  "mode": "private",
+  "training_samples": 1890,
+  "epochs": 10,
+  "batch_size": 64,
+  "learning_rate": 0.05,
+  "training_seconds": 0.9845651779999969,
+  "validation": {
+    "loss": 0.44570299983024597,
+    "accuracy": 0.8444444444444444,
+    "f1": 0.0,
+    "auc": 0.7593056715863733
+  },
+  "test": {
+    "loss": 0.4434824585914612,
+    "accuracy": 0.8444444444444444,
+    "f1": 0.0,
+    "auc": 0.7542467279309384
+  },
+  "epsilon": 4.997161832685901,
+  "delta": 1e-05,
+  "noise_multiplier": 0.877685546875,
+  "max_grad_norm": 1.0
+}
