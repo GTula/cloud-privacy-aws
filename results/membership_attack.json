@@ -1,0 +1,20 @@
+{
+  "conventional": {
+    "model": "conventional",
+    "attack_auc": 0.5009079626363576,
+    "advantage": 0.0018159252727152353,
+    "tpr_at_fpr_0.1": 0.08941798941798942,
+    "train_mean_loss": 0.35529300570487976,
+    "test_mean_loss": 0.3652375340461731,
+    "loss_gap": 0.009944528341293335
+  },
+  "private": {
+    "model": "private",
+    "attack_auc": 0.5006780325298844,
+    "advantage": 0.0013560650597688184,
+    "tpr_at_fpr_0.1": 0.09417989417989418,
+    "train_mean_loss": 0.4357137084007263,
+    "test_mean_loss": 0.4434824287891388,
+    "loss_gap": 0.007768720388412476
+  }
+}
