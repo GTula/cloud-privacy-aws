@@ -141,6 +141,44 @@ def compare_models():
         "también el ataque de inferencia de pertenencia."
     )
 
+    # Resultados del ataque de inferencia de pertenencia
+    attack_path = RESULTS_DIR / "membership_attack.json"
+    if attack_path.exists():
+        with open(attack_path, "r", encoding="utf-8") as f:
+            attack = json.load(f)
+
+        print("\n" + "=" * 65)
+        print("ATAQUE DE INFERENCIA DE PERTENENCIA")
+        print("=" * 65)
+        print(
+            f"{'Métrica':<30}"
+            f"{'Convencional':<20}"
+            f"{'Privado':<20}"
+        )
+        print("-" * 65)
+
+        attack_rows = [
+            ("AUC-ROC del ataque",    "attack_auc"),
+            ("Ventaja del atacante",  "advantage"),
+            ("TPR @ FPR=0.1",         "tpr_at_fpr_0.1"),
+            ("Brecha de pérdida",     "loss_gap"),
+        ]
+        for label, key in attack_rows:
+            c = attack["conventional"][key]
+            p = attack["private"][key]
+            print(
+                f"{label:<30}"
+                f"{format_value(c):<20}"
+                f"{format_value(p):<20}"
+            )
+        print("=" * 65)
+        print("\nNota: AUC~0.5 indica privacidad fuerte; AUC~1.0 indica memorización.")
+    else:
+        print(
+            "\nEjecutar scripts/membership_attack.py para obtener "
+            "métricas del ataque de privacidad."
+        )
+
 
 if __name__ == "__main__":
     compare_models()
